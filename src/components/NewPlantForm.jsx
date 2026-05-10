@@ -3,7 +3,7 @@ import React, { useState } from "react";
 function NewPlantForm({ onAddPlant }) {
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
-  const [price, setPrice] = useState(0);
+  const [price, setPrice] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -18,7 +18,7 @@ function NewPlantForm({ onAddPlant }) {
         onAddPlant(addedPlant);
         setName("");
         setImage("");
-        setPrice(0);
+        setPrice("");
       });
   }
 
@@ -46,7 +46,7 @@ function NewPlantForm({ onAddPlant }) {
           step="0.01"
           placeholder="Price"
           value={price}
-          onChange={(e) => setPrice(parseFloat(e.target.value))}
+          onChange={(e) => setPrice(e.target.value)}
         />
         <button type="submit">Add Plant</button>
       </form>
